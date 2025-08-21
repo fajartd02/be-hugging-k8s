@@ -7,7 +7,8 @@ from sqlalchemy.orm import sessionmaker, Session
 from sqlalchemy.exc import IntegrityError
 
 # PostgreSQL connection URL - uses environment variable with fallback
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql+psycopg2://myuser:mypassword@localhost:5432/mydb")
+# CHANGE TO be the database (postgres) created locally , use compose is better.
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://myuser:mypassword@host.docker.internal:5432/mydb")
 
 # SQLAlchemy setup
 engine = create_engine(DATABASE_URL)
